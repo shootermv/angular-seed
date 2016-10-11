@@ -14,14 +14,16 @@
     "karma-firefox-launcher": "^0.1.7",
     "karma-jasmine": "^0.3.8",
     "karma-junit-reporter": "^0.4.1",
-    "protractor": "^3.2.2"
+    "protractor": "^3.2.2",
+    "typescript": "^1.8.10",
+    "typings": "^0.8.1"
   },
   "scripts": {
-    "postinstall": "bower install",
+    "postinstall": "bower install && typings install",
 
     "prestart": "npm install",
     "start": "http-server -a localhost -p 8000 -c-1 ./app",
-
+    "build": "tsc -p ./",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
     "test-single-run": "karma start karma.conf.js --single-run",
