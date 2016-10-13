@@ -1,4 +1,4 @@
-# angular-seed — the seed for AngularJS apps
+# angular-typescript-seed — the seed for AngularJS apps
 
 This project (originaly forked from [angular-seed](https://github.com/angular/angular-seed)) purpose is to create 
 typescript verison of its ES5 parent - e.d. lightweight angularjs-typescript starter project. 
