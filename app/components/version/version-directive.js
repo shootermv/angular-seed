@@ -3,8 +3,12 @@
 angular.module('myApp.version.version-directive', [])
 
 .directive('appVersion', ['version', function(version) {
-  return function(scope, elm, attrs) {
-    elm.text(version);
+  return {
+    restrict:'E',
+    templateUrl:'components/version/tpl.html',
+    link:function(scope, elm, attrs) {
+      elm.find('div').text(version+'gogo'); 
+    }
   };
 }]);
 

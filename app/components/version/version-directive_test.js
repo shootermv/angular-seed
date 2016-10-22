@@ -1,7 +1,11 @@
 'use strict';
 
 describe('myApp.version module', function() {
-  beforeEach(module('myApp.version'));
+  beforeEach(function(){
+
+    module('myApp.version')
+   module('templates');   
+  });
 
   describe('app-version directive', function() {
     it('should print current version', function() {
@@ -9,8 +13,9 @@ describe('myApp.version module', function() {
         $provide.value('version', 'TEST_VER');
       });
       inject(function($compile, $rootScope) {
-        var element = $compile('<span app-version></span>')($rootScope);
-        expect(element.text()).toEqual('TEST_VER');
+        var element = $compile('<app-version></app-version>')($rootScope);
+        $rootScope.$digest();
+        expect(element.text()).toEqual('TEST_VERgogo');
       });
     });
   });
