@@ -1,9 +1,6 @@
 /// <reference path="../../typings/main/ambient/jquery/index.d.ts" />
 /// <reference path="../../typings/main/ambient/angular/index.d.ts" />
 /// <reference path="../../typings/main/ambient/angular-route/index.d.ts" />
-class view2 {
-    "use strict";
-      constructor(){
         angular.module('myApp.view2', ['ngRoute'])
 
         .config(['$routeProvider', ($routeProvider: angular.route.IRouteProvider) => {
@@ -16,6 +13,4 @@ class view2 {
         .controller('View2Ctrl', [() => {
 
         }]); 
-      }
-}
-export default view2;
+  
