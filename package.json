@@ -24,7 +24,7 @@
     "postinstall": "bower install && typings install",
 
     "prestart": "npm install",
-    "start": "http-server -a localhost -p 8000 -c-1 ./app",
+    "start": "node_modules/.bin/webpack && http-server -a localhost -p 8100 -c-1 ./app",
     "build": "tsc -p ./",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
