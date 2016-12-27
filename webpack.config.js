@@ -2,14 +2,17 @@ var webpack = require('webpack');
 var path = require('path');
 module.exports = {
     context: path.join( __dirname, '/app'),
-    entry: 'app.ts',
+    entry: ['app/app.ts'],
     output: {
         filename: 'app.js',
-        path: path.join( __dirname, '/app')
+        path: '/app'
     },
     resolve: {
-        root: path.join( __dirname, '/app'),
+        root: __dirname,
         extensions: ['', '.ts', '.webpack.js', '.web.js', '.js']
+    },
+    resolveLoader: {
+        modulesDirectories: ["node_modules"]
     },
     module: {
         loaders: [
