@@ -1,6 +1,6 @@
 import * as angular from "angular";
 import "angular-mocks";
-
+import "phantomjs-polyfill";
 describe('myApp.version module', () => {
   beforeEach(angular.mock.module('myApp.version'));
 
