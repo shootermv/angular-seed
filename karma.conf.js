@@ -1,34 +1,61 @@
-//jshint strict: false
-module.exports = function(config) {
-  config.set({
+'use strict';
 
-    basePath: './app',
+var webpackConfig = require('./webpack.test.js');
+require('phantomjs-polyfill')
+webpackConfig.entry = {};
 
-    files: [
-      'bower_components/angular/angular.js',
-      'bower_components/angular-route/angular-route.js',
-      'bower_components/angular-mocks/angular-mocks.js',
-      'components/**/*.js',
-      'view*/**/*.js'
-    ],
-
-    autoWatch: true,
-
-    frameworks: ['jasmine'],
-
-    browsers: ['Chrome'],
-
-    plugins: [
-      'karma-chrome-launcher',
-      'karma-firefox-launcher',
-      'karma-jasmine',
-      'karma-junit-reporter'
-    ],
-
-    junitReporter: {
-      outputFile: 'test_out/unit.xml',
-      suite: 'unit'
-    }
-
-  });
+module.exports = function (config) {
+    config.set({
+        basePath: '',
+        frameworks: ['jasmine'],
+        port: 9876,
+        colors: true,
+        logLevel: config.LOG_INFO,
+        autoWatch: false,
+        browsers: ['PhantomJS'],
+        singleRun: true,
+        autoWatchBatchDelay: 300,
+        files: [
+            './node_modules/phantomjs-polyfill/bind-polyfill.js',
+            './app/test.ts'
+        ],
+        babelPreprocessor: {
+            options: {
+                presets: ['es2015']
+            }
+        },
+        preprocessors: {
+            'app/test.ts': ['webpack'],
+            'app/**/!(*.spec)+(.js)': ['coverage']
+        },
+        webpackMiddleware: {
+            stats: {
+                chunkModules: false,
+                colors: true
+            }
+        },
+        webpack: webpackConfig,
+        reporters: [
+            'dots',
+            'spec',
+            'coverage'
+        ],
+        coverageReporter: {
+            reporters: [
+                {
+                    dir: 'reports/coverage/',
+                    subdir: '.',
+                    type: 'html'
+                },{
+                    dir: 'reports/coverage/',
+                    subdir: '.',
+                    type: 'cobertura'
+                }, {
+                    dir: 'reports/coverage/',
+                    subdir: '.',
+                    type: 'json'
+                }
+            ]
+        }
+    });
 };

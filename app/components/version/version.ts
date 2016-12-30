@@ -1,6 +1,7 @@
 import {appVersion} from './version-directive'
 import {interpolate} from './interpolate-filter'
 import * as angular from "angular";
+export const version = '0.1' 
     angular.module('myApp.version.version-directive',[]).directive('appVersion', appVersion)
     angular.module('myApp.version.interpolate-filter', []).filter('interpolate',interpolate)
 
@@ -9,5 +10,5 @@ import * as angular from "angular";
       'myApp.version.version-directive'
     ])
 
-    .value('version', '0.1');
+    .value('version', version);
   

@@ -1,17 +1,17 @@
 import * as angular from "angular";
 import "angular-mocks";
-
+import {View2Ctrl} from './view2'
 describe('myApp.view2 module', () => {
 
   beforeEach(angular.mock.module('myApp.view2'));
 
   describe('view2 controller', () => {
 
-    it('should ....', inject(($controller) => {
+    it('should ....', () => {
       //spec body
-      var view2Ctrl = $controller('View2Ctrl');
-      expect(view2Ctrl).toBeDefined();
-    }));
+     
+      expect(View2Ctrl).toBeDefined();
+    });
 
   });
 });
