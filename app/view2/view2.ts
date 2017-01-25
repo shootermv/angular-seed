@@ -1,6 +1,10 @@
         import * as angular from "angular";
         export const View2Ctrl = () => {
-
+          $('#input-tags').selectize({
+            persist: false,
+            createOnBlur: true,
+            create: true
+          });
         }
         angular.module('myApp.view2', ['ngRoute'])
 
