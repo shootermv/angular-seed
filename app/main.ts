@@ -1,1 +1,2 @@
-angular.bootstrap(document.body, ['myApp'], {strictDi: true});
+import './app'
+angular.bootstrap(document.body, ['myApp'], { strictDi: true });

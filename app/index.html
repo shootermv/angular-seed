@@ -2,7 +2,10 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
 <head>
   <base href="/app/">
   <meta charset="utf-8">
@@ -15,6 +18,7 @@
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
+
 <body>
   <ul class="menu">
     <li><a href="#!/view1">view1</a></li>
@@ -35,16 +39,16 @@
   <script src="/node_modules/systemjs/dist/system.src.js"></script>
   <script src="/node_modules/angular/angular.js"></script>
   <script src="/node_modules/angular-route/angular-route.js"></script>
-    <script src="systemjs.config.js"></script>
-    <script>
-      System.import('main.js').catch(function(err){ console.error(err); });
-    </script>
-  <script src="app.js"></script>
+  <script src="systemjs.config.js"></script>
+  <script>
+    System.import('/app').catch(function (err) { console.error(err); });
+  </script>
   <script src="view1/view1.js"></script>
   <script src="view2/view2.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
- 
+
 </body>
+
 </html>
